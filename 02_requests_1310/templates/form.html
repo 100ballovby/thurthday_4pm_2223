@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="POST">
+    <!-- label - подпись к полю, при помощи for их можно связать с id поля -->
+    <div><label for="lang">Your language:
+        <input type="text" id="lang" name="lang">
+    </label></div>
+    <div><label for="frame">Your framework: 
+        <input type="text" id="frame" name="frame">
+    </label></div>  <!-- name - он позволяет Flask обратиться к полю-->
+    <input type="submit" value="Send">
+    <!-- submit - кнопка отправки, value - текст на кнопке-->
+</form>
+
+{% if context %}  <!-- если аргумент context был передан функцией -->
+    <p>{{ context[0] }}</p>
+    <p>{{ context[1] }}</p>
+{% endif %}
+
+</body>
+</html>
